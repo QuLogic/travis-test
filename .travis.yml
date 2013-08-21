@@ -3,6 +3,7 @@ script:
     - automake-1.11 --version
     - sudo add-apt-repository -y ppa:dns/gnu
     - sudo apt-get update
+    - sudo apt-cache search automake
     - sudo apt-get install automake1.12
     - automake-1.12 --version
     - automake --version
