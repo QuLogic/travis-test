@@ -1,8 +1,9 @@
 script:
     - automake --version
-    - automake-1.12 --version
     - automake-1.11 --version
-    - sudo apt-get install automake-1.12
-    - sudo apt-get update automake
+    - sudo add-apt-repository ppa:dns/gnu
+    - sudo apt-get install automake1.12
+    - automake-1.12 --version
+    - automake --version
     - sudo apt-get install gfortran
     - gfortran --version
