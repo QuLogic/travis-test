@@ -1,0 +1,8 @@
+script:
+    - automake --version
+    - automake-1.12 --version
+    - automake-1.11 --version
+    - sudo apt-get install automake-1.12
+    - sudo apt-get update automake
+    - sudo apt-get install gfortran
+    - gfortran --version
