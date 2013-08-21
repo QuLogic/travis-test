@@ -2,8 +2,8 @@ language: cpp
 script:
     - automake --version
     - automake-1.11 --version
-    - sudo add-apt-repository -qy ppa:rbose-debianizer/automake
-    - sudo apt-get update -q
-    - sudo apt-get install -q automake
+    - sudo add-apt-repository -y ppa:rbose-debianizer/automake &> /dev/null
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install automake
     - automake-1.12 --version
     - automake --version
