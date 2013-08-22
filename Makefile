@@ -11,7 +11,9 @@ clean:
 	rm *.o sassc
 
 test: sassc
+	echo -en 'travis_fold:start:sassc\r'
 	./sassc -h
+	echo -en 'travis_fold:end:sassc\r'
 
 .PHONY: all clean test
 
