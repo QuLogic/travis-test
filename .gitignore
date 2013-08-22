@@ -1,0 +1,5 @@
+*.o
+*.gcov
+*.gcda
+*.gcno
+sassc
