@@ -4,6 +4,13 @@ compiler:
 before_install:
     - sudo pip install cpp-coveralls --use-mirrors
 script:
+    - echo "PWD=$PWD"
+    - echo "PATH=$PATH"
+    - echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH"
+    - cat /etc/ld.so.conf
+    - for f in /etc/ld.so.conf.d/*; do echo $f; cat $f; done
+    - cat /dev/null | cpp -v
+    - gcc -print-search-dirs
     - make test
 after_success:
   - coveralls --exclude lib --exclude tests
