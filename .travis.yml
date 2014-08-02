@@ -14,3 +14,6 @@ script:
     - conda install udunits=2
     - conda info --all
     - conda info udunits
+    - which python
+    - python -c 'import sys; print(sys.path)'
+    - ls $HOME/miniconda/envs/$ENV_NAME/lib*
