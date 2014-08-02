@@ -1,8 +1,4 @@
-language: cpp
-compiler:
-    - gcc
-before_install:
-    - sudo pip install cpp-coveralls --use-mirrors
+language: python
 script:
     - export CONDA_BASE=http://repo.continuum.io/miniconda/Miniconda
     - if [[ "$TRAVIS_PYTHON_VERSION" == 2* ]]; then wget ${CONDA_BASE}-3.4.2-Linux-x86_64.sh -O miniconda.sh; else wget ${CONDA_BASE}3-3.4.2-Linux-x86_64.sh -O miniconda.sh; fi
@@ -18,6 +14,3 @@ script:
     - conda install udunits=2
     - conda info --all
     - conda info udunits
-    - make test
-after_success:
-  - coveralls --exclude lib --exclude tests
