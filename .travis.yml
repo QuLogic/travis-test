@@ -17,6 +17,4 @@ script:
     - which python
     - python -c 'import sys; print(sys.path)'
     - ls $HOME/miniconda/envs/$ENV_NAME/lib*
-    - python -c "import ctypes.util; print(ctypes.util.find_library('udunits2'))"
-    - sudo ldconfig
-    - python -c "import ctypes.util; print(ctypes.util.find_library('udunits2'))"
+    - python -c "import ctypes; print(ctypes.cdll.LoadLibrary('udunits2'))"
