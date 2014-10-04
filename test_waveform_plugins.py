@@ -40,7 +40,7 @@ with NamedTemporaryFile() as tf:
         elif time.time() - start >= 120:  # pragma: no cover
             msg = 'Not all threads finished!'
             raise Warning(msg)
-    print('Total runtime:' time.time() - start)
+    print('Total runtime:', time.time() - start)
 
     # Compare all values which should be identical and clean up
     # files
