@@ -1,20 +1,5 @@
 language: python
+install:
+    - pip install numpy
 script:
-    - export CONDA_BASE=http://repo.continuum.io/miniconda/Miniconda
-    - if [[ "$TRAVIS_PYTHON_VERSION" == 2* ]]; then wget ${CONDA_BASE}-3.4.2-Linux-x86_64.sh -O miniconda.sh; else wget ${CONDA_BASE}3-3.4.2-Linux-x86_64.sh -O miniconda.sh; fi
-    - bash miniconda.sh -b -p $HOME/miniconda
-    - export PATH="$HOME/miniconda/bin:$PATH"
-    - conda config --set always_yes yes --set changeps1 no
-    - conda config --set show_channel_urls True
-    - conda update conda
-    - ENV_NAME='test-environment'
-    - conda create -n $ENV_NAME python=$TRAVIS_PYTHON_VERSION
-    - source activate $ENV_NAME
-    - conda config --add channels scitools
-    - conda install udunits=2
-    - conda info --all
-    - conda info udunits
-    - which python
-    - python -c 'import sys; print(sys.path)'
-    - ls $HOME/miniconda/envs/$ENV_NAME/lib*
-    - python -c "import ctypes; print(ctypes.cdll.LoadLibrary('udunits2'))"
+    - python test_waveform_plugins.py
