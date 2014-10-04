@@ -10,13 +10,13 @@ import numpy as np
 # Tests for race conditions. Reading n_threads (currently 30) times
 # the same waveform file in parallel and compare the results which must
 # be all the same.
-data = np.repeat(np.arange(0, 1024), 1024 * 16)
+data = np.repeat(np.arange(0, 1024), 1024)
 
 # create waveform file with given format and byte order
 with NamedTemporaryFile() as tf:
     outfile = tf.name
     data.tofile(outfile)
-    n_threads = 300
+    n_threads = 100
     streams = []
 
     def testFunction(streams):
