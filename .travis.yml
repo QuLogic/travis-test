@@ -1,5 +1,6 @@
 language: python
 install:
     - pip install numpy
+    - dpkg -s zlib1g-dev
 script:
     - python test_waveform_plugins.py
