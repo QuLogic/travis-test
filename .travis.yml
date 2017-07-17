@@ -1,5 +1,6 @@
 language: r
 sudo: false
+dist: trusty
 install:
     - pip3 install doctr
     - pip install doctr
