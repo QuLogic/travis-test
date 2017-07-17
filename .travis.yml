@@ -1,6 +1,5 @@
-language: python
+language: r
+sudo: false
 install:
-    - pip install numpy
-    - dpkg -s zlib1g-dev
-script:
-    - python test_waveform_plugins.py
+    - pip3 install doctr
+    - pip install doctr
